@@ -1,0 +1,193 @@
+/* Mantenemos los estilos básicos pero actualizamos para que coincida con las imágenes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Sintony', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Eliminamos los estilos de header, nav y footer que ya están en styles.css */
+
+/* Estilos para la sección principal */
+.title {
+  font-family: 'Slackey', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #E7EBF1;
+  margin-bottom: 0;
+}
+
+.instrumentos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.item {
+  width: 220px;
+  text-align: center;
+}
+
+.category {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.category:hover {
+  transform: scale(1.05);
+}
+
+.category img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Estilos para las secciones de instrumentos */
+.subtitles {
+  font-family: 'Slackey', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+
+  background-color: #3a6ea5;
+  padding: 15px 0;
+}
+
+/* Estilos para la sección de trompetas */
+#trompetas {
+  color: #355A8A;
+  background-color: #E7EBF1;
+}
+
+/* Estilos para la sección de flautas */
+#flautas {
+  color: #ffff;
+  background-color: #3a6ea5;
+}
+
+/* Estilos para la sección de saxofones */
+#saxofones {
+  background-color: #3a6ea5;
+}
+
+.viento {
+  background-color: #E7EBF1;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.viento-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 220px;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.viento-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.viento-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+  margin: 0 auto 1rem auto;
+  object-fit: contain;
+}
+
+.viento-item h3 {
+  font-family: 'Sintony', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.viento-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.viento-item .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #000000;
+  margin-top: auto;
+}
+
+.price p {
+  color: rgb(41, 145, 41);
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* Modificamos el comportamiento de la información para que se muestre en un tooltip o al hacer hover */
+.info {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+
+.viento-item:hover .info {
+  display: block;
+}
+
+/* Estilos para hacer la página responsive */
+@media (max-width: 768px) {
+  .instrumentos {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .viento {
+    padding: 10px;
+  }
+  
+  .viento-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
